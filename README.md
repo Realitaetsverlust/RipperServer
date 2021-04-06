@@ -3,7 +3,7 @@
 
 RipperServer is a simple Web-Wrapper based on PHP.
 
-I wrote RipperServer for use with , but you can, also use it with your own software.
+I wrote RipperServer for use with https://github.com/Realitaetsverlust/RipperClient, but you can, also use it with your own software.
 
 Requires PHP 8. I'm not sure if I used any PHP 8 features, but I only code on PHP 8 and only provide support for it.
 
