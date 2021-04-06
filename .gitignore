@@ -1,0 +1,10 @@
+# Whitelisting gud
+*
+!.gitignore
+!index.php
+!bootstrap.php
+!.htaccess
+!api.txt
+!Classes
+!Classes/Download.php
+!Classes/Ripper.php

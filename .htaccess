@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteCond $1 !^(bootstrap\.php)
+    RewriteRule ^(.*)$ /bootstrap\.php/$1 [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin: *
+    Header always set X-pect "The spanish inquisition"
+    SetEnv no-gzip dont-vary
+</IfModule>
+
+<Files "api.txt">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
