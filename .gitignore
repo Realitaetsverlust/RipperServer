@@ -4,6 +4,8 @@
 !index.php
 !bootstrap.php
 !.htaccess
+!README.md
+!LICENSE.md
 !api.txt
 !Classes
 !Classes/Download.php
