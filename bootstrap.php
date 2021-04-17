@@ -17,8 +17,12 @@ switch($command) {
             abort();
         }
 
+        //Also validating the passed video name and ID against the evil stuff
+        $videoName = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING);
+        $videoId = filter_input(INPUT_GET, 'videoId', FILTER_SANITIZE_STRING);
+
         $exec = new Ripper();
-        $exec->exec();
+        $exec->exec($videoId, $videoName);
         break;
     case 'Download':
         $exec = new Download();

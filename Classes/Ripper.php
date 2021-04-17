@@ -1,24 +1,19 @@
 <?php
 
 class Ripper {
-    public function exec() {
+    public function exec(string $videoId, string $videoName) : void {
         //We just set the content type up here because there's a json in any case
         header('Content-Type: application/json');
 
-        //fetch the info from the request and validate it against the evil stuff
-        $videoId = filter_input(INPUT_GET, 'videoId', FILTER_SANITIZE_STRING);
-
         //quick check to validate the video ID
+        //TODO: Wrap this as a json response so we can work with it later in the JS client
         if(!preg_match('/[a-zA-Z0-9_-]{11}/', $videoId)) {
             exit('wrong videoId format');
         }
 
-        //Also validating the passed video name against the evil stuff
-        $videoName = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING);
-
         //If video name is still evaluating to something wrong, let's just use a dummy name
         if($videoName == false) {
-            $videoName = 'video';
+            $videoName = 'track'.time();
         }
 
         // -x = only audio

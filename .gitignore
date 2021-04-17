@@ -6,7 +6,8 @@
 !.htaccess
 !README.md
 !LICENSE.md
-!api.txt
 !Classes
 !Classes/Download.php
 !Classes/Ripper.php
+!Library
+!Library/*
