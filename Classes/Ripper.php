@@ -1,7 +1,7 @@
 <?php
 
 class Ripper {
-    public function exec(string $videoId, string $videoName) : void {
+    public function exec(string $videoId, string $videoName) : string {
         //We just set the content type up here because there's a json in any case
         header('Content-Type: application/json');
 
@@ -47,13 +47,12 @@ class Ripper {
         header('Content-Type: application/json');
 
         if($match == false) {
-            echo json_encode([
+            return json_encode([
                 'error' => 'There was an issue with youtube-dl! Try execute ' . $executable . ' manually on the target system and check the output. Most likely you just have to update the application with "youtube-dl -U"',
             ]);
-            exit();
         }
 
-        echo json_encode([
+        return json_encode([
             'videoTitle' => urlencode($match[0])
         ]);
     }
